@@ -1,0 +1,28 @@
+{
+    "devDependencies": {
+        "@symfony/webpack-encore": "^0.17.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production"
+    },
+    "dependencies": {
+        "axios": "^0.17.1",
+        "bootstrap-sass": "^3.3.7",
+        "jquery": "^3.3.1",
+        "moment": "^2.20.1",
+        "node-sass": "^4.7.2",
+        "postcss": "^6.0.17",
+        "postcss-loader": "^2.1.0",
+        "rm": "^0.1.8",
+        "sass-loader": "^6.0.6",
+        "vue": "^2.5.13",
+        "vue-loader": "^14.1.1",
+        "vue-template-compiler": "^2.5.13",
+        "vue2-datepicker": "^1.8.2"
+    }
+}

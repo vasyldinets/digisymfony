@@ -1,0 +1,39 @@
+security:
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
+
+    providers:
+        chain_provider:
+            chain:
+                providers: [in_memory, db_provider]
+        in_memory: { memory: ~ }
+        db_provider:
+            entity:
+                class: App\Entity\User
+                property: username
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        rest:
+            provider: db_provider
+            pattern: "^/api/*"
+            stateless: true
+            guard:
+                authenticators:
+                   - App\Security\TokenAuthenticator
+        main:
+            anonymous: ~
+            provider: db_provider
+            form_login:
+                csrf_token_generator: security.csrf.token_manager
+                login_path: login
+                check_path: login
+            logout:
+                path:   /logout
+                target: /login
+    access_control:
+        - { path: ^/transactions, roles: ROLE_USER }

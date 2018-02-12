@@ -1,0 +1,14 @@
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+
+.form-control.inline{
+  display: inline-block;
+  width: auto;
+}
+.form-group label{
+  margin-right: 5px;
+}
+.mx-datepicker{
+  width: 100%;
+}
